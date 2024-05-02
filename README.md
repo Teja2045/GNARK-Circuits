@@ -8,5 +8,6 @@
 
 ### Cube checker
 - A simple circuit that check cube of a number
+  
       x^3 == y
 - X is the private input and y is the public input  

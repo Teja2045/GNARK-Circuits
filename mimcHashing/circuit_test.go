@@ -21,7 +21,7 @@ func TestMimcCircuit(t *testing.T) {
 	// hashing using mimc hash and ecc.BN254 curve
 	dummyHashedData := utils.GetDummyHashedData()
 	data := dummyHashedData.Data
-	byteData := []byte(data.Bytes())
+	byteData := data.Bytes()
 	expectedHash := Hash(byteData, hashFunc)
 
 	t.Log("data: ", data, ", expected hash:", utils.ByteArrayToHexString(expectedHash), dummyHashedData.HashString)

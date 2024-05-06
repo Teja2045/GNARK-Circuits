@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"zkCircuits/cubic"
-	"zkCircuits/mimcHashing"
+
+	"github.com/Teja2045/GNARK-Circuits/cubic"
+	"github.com/Teja2045/GNARK-Circuits/mimcHashing"
 )
 
 func main() {

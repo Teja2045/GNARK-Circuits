@@ -2,7 +2,8 @@ package mimcHashing
 
 import (
 	"fmt"
-	"zkCircuits/utils"
+
+	"github.com/Teja2045/GNARK-Circuits/utils"
 
 	"github.com/consensys/gnark-crypto/ecc"
 	"github.com/consensys/gnark/backend/groth16"

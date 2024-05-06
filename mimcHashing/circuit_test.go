@@ -9,7 +9,7 @@ import (
 	"github.com/consensys/gnark/test"
 	"github.com/stretchr/testify/assert"
 
-	"zkCircuits/utils"
+	"github.com/Teja2045/GNARK-Circuits/utils"
 )
 
 func TestMimcCircuit(t *testing.T) {

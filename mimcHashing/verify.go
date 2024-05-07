@@ -31,8 +31,8 @@ func Verify() {
 
 	//witness2, _ := frontend.NewWitness()
 
-	big := ecc.BN254.ScalarField()
-	fmt.Println("verify public witness: ", assignment.VerifyWitness(big, publicWitness))
+	field := ecc.BN254.ScalarField()
+	fmt.Println("verify public witness: ", assignment.VerifyWitness(field, publicWitness))
 
 	fmt.Println("hash string is ", dummyData.HashString)
 	fmt.Println("hash by array is ", utils.HexStringToByteArray(dummyData.HashString))

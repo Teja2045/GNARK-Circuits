@@ -13,3 +13,8 @@
   
       x^3 == y
 - X is the private input and y is the public input  
+
+### Signature Verification
+- An eddsa signature verfication that checks if a digital signature is valid or not
+      pubkey.verify(data, signature)
+- data is private input and pubkey, signature are public inputs

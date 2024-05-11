@@ -1,16 +1,15 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/Teja2045/GNARK-Circuits/cubic"
-	"github.com/Teja2045/GNARK-Circuits/mimcHashing"
+	"github.com/Teja2045/GNARK-Circuits/signature"
 )
 
 func main() {
-	cubic.Verify()
+	// cubic.Verify()
 
-	fmt.Println()
+	// fmt.Println()
 
-	mimcHashing.Verify()
+	// mimcHashing.Verify()
+
+	signature.ProveAndVerify()
 }

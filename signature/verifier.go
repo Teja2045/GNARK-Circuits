@@ -10,6 +10,9 @@ import (
 	"github.com/consensys/gnark/std/signature/eddsa"
 )
 
+// make an assignment with valid public inputs and other random inputs
+// generate public witness (though there is another way to generate
+// public witness without random inputs)
 func Verifier(proof groth16.Proof, vk groth16.VerifyingKey, data []byte, randomPubKey eddsa.PublicKey, randomSign eddsa.Signature) {
 
 	startTime := time.Now()
@@ -18,7 +21,6 @@ func Verifier(proof groth16.Proof, vk groth16.VerifyingKey, data []byte, randomP
 		println("Time taken to verify proof:", elapsed, " MilliSeconds")
 	}(startTime)
 
-	// make an assignment with valid public inputs and other random inputs
 	publicAssignment := SignatureCircuit{
 		PubKey:    randomPubKey,
 		Signature: randomSign,

@@ -18,6 +18,7 @@ func Verifier(proof groth16.Proof, vk groth16.VerifyingKey, data []byte, randomP
 		println("Time taken to verify proof:", elapsed, " MilliSeconds")
 	}(startTime)
 
+	// make an assignment with valid public inputs and other random inputs
 	publicAssignment := SignatureCircuit{
 		PubKey:    randomPubKey,
 		Signature: randomSign,

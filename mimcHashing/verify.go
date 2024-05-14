@@ -2,6 +2,7 @@ package mimcHashing
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/Teja2045/GNARK-Circuits/utils"
 
@@ -12,6 +13,9 @@ import (
 )
 
 func Verify() {
+
+	startTime := time.Now()
+
 	var circuit MimcCircuit
 	ccs, _ := frontend.Compile(ecc.BN254.ScalarField(), r1cs.NewBuilder, &circuit)
 
@@ -39,6 +43,10 @@ func Verify() {
 	fmt.Println("------------ Public Witness is ", witness, "--------------")
 
 	proof, _ := groth16.Prove(ccs, pk, witness)
-
+	proverTime := time.Since(startTime).Milliseconds()
+	fmt.Println("proof generation time : ", proverTime, "MilliSeconds")
+	startTime = time.Now()
 	groth16.Verify(proof, vk, publicWitness)
+	verifierTime := time.Since(startTime).Milliseconds()
+	fmt.Println("proof verfication time : ", verifierTime, "MilliSeconds")
 }

@@ -1,8 +1,6 @@
 package main
 
-import (
-	"github.com/Teja2045/GNARK-Circuits/signature"
-)
+import "github.com/Teja2045/GNARK-Circuits/signature"
 
 func main() {
 	// cubic.Verify()

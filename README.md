@@ -3,6 +3,12 @@
 
 ## Circuits
 
+### Merkle Inclusion proof
+- An inclusion proof verification circuit
+- Data (index of data segment to be proven, IS THERE A WAY TO VERIFY IF THE LEAF DATA MATCHES DATA SEGMENT AT INDEX??), merkleProof as inputs
+  
+      merkle.verify(data, merkleproof)
+
 ### Mimc Hash Function
 - A simple Mimc Hash function verifier with BN254 curve
 

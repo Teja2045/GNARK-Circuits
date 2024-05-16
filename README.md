@@ -1,8 +1,6 @@
 # GNARK Circuits
     some zero knowledge circuit implementations using Gnark framework
 
-    Note: Signature circuit is refactored to have separate prover and verifier. It could be used as a complete example flow.
-
 ## Circuits
 
 ### Merkle Inclusion proof
@@ -26,3 +24,5 @@
 - An eddsa signature verfication that checks if a digital signature is valid or not
       pubkey.verify(data, signature)
 - data is private input and pubkey, signature are public inputs
+  
+      Note: Signature circuit is refactored to have separate prover and verifier. It could be used as a complete example flow.

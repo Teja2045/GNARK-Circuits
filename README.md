@@ -1,6 +1,8 @@
 # GNARK Circuits
     some zero knowledge circuit implementations using Gnark framework
 
+    Note: Signature circuit is refactored to have separate prover and verifier. It could be used as a complete example flow.
+
 ## Circuits
 
 ### Merkle Inclusion proof

@@ -1,9 +1,9 @@
-# GNARK Circuits
+# GNARK Circuits (with Array inputs)
     some zero knowledge circuit implementations using Gnark framework
 
 ## Circuits
 
-### Merkle Inclusion proof
+### Merkle Inclusion proof (Array of proofs)
 - An inclusion proof verification circuit
 - Data (index of data segment to be proven, IS THERE A WAY TO VERIFY IF THE LEAF DATA MATCHES DATA SEGMENT AT INDEX??), merkleProof as inputs
   
@@ -20,7 +20,7 @@
       x^3 == y
 - X is the private input and y is the public input  
 
-### Signature Verification
+### Signature Verification (Array of signatures)
 - An eddsa signature verfication that checks if a digital signature is valid or not
       pubkey.verify(data, signature)
 - data is private input and pubkey, signature are public inputs

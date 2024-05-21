@@ -1,6 +1,6 @@
 package main
 
-import "github.com/Teja2045/GNARK-Circuits/signature"
+import "github.com/Teja2045/GNARK-Circuits/recursion"
 
 func main() {
 	// cubic.Verify()
@@ -9,5 +9,7 @@ func main() {
 
 	// mimcHashing.Verify()
 
-	signature.ProveAndVerify()
+	// signature.ProveAndVerify()
+
+	recursion.ProveAndVerify()
 }

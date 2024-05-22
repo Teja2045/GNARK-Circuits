@@ -7,12 +7,13 @@ import (
 
 	"github.com/consensys/gnark-crypto/ecc"
 	"github.com/consensys/gnark/backend/groth16"
+	"github.com/consensys/gnark/backend/witness"
 	stdgroth16 "github.com/consensys/gnark/std/recursion/groth16"
 )
 
 func ProveAndVerify() {
 	field := ecc.BN254.ScalarField()
-	innerPk, innerVk, innerCs, err := InnerSetup()
+	innerPk, innerVk, innerCs, err := PersistantInnerSetup()
 	if err != nil {
 		slog.Error(err.Error())
 		return
@@ -30,14 +31,25 @@ func ProveAndVerify() {
 	slog.Info(fmt.Sprintln("time taken taken to verify inner proof: ", time.Since(before).Milliseconds(), "Millseconds"))
 	fmt.Println()
 
-	outerAssignment := NewOuterAssignment(innerPubWitness, innerProof, innerVk)
-	outerPk, outerVk, outerCs, err := OuterSetup(innerCs)
+	primesData := DummyPrimesData()
+
+	var outerPubWitness witness.Witness
+	var outerProof groth16.Proof
+
+	outerPk, outerVk, outerCs, err := PersistantOuterSetup(innerCs)
 	if err != nil {
 		slog.Error(err.Error())
 		return
 	}
 
-	outerPubWitness, outerProof := GenerateProof(field, outerPk, outerCs, &outerAssignment, false)
+	for i := 0; i < len(primesData); i++ {
+		outerAssignment := NewOuterAssignment(primesData[i][0], primesData[i][1], primesData[i][2], innerPubWitness, innerProof, innerVk)
+
+		outerPubWitness, outerProof = GenerateProof(field, outerPk, outerCs, &outerAssignment, i+1 < len(primesData))
+		innerPubWitness = outerPubWitness
+		innerProof = outerProof
+		innerVk = outerVk
+	}
 
 	before = time.Now()
 	groth16.Verify(outerProof, outerVk, outerPubWitness)

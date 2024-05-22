@@ -1,8 +1,11 @@
 package main
 
-import "github.com/Teja2045/GNARK-Circuits/recursion"
+import (
+	"github.com/Teja2045/GNARK-Circuits/recursion"
+)
 
 func main() {
+
 	// cubic.Verify()
 
 	// fmt.Println()
@@ -12,4 +15,5 @@ func main() {
 	// signature.ProveAndVerify()
 
 	recursion.ProveAndVerify()
+	//recursion.DummyPrimesData()
 }

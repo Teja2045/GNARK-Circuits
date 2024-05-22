@@ -16,6 +16,7 @@ func NewInnerAssignment(x uint64, y uint64, z uint64) InnerCircuit {
 }
 
 func NewOuterAssignment(
+	x, y, z uint64,
 	innerWitness witness.Witness,
 	innerProof groth16.Proof,
 	innerVk groth16.VerifyingKey) OuterCircuit[sw_bn254.ScalarField, sw_bn254.G1Affine, sw_bn254.G2Affine, sw_bn254.GTEl] {
@@ -36,5 +37,8 @@ func NewOuterAssignment(
 		InnerWitness: circuitWitness,
 		Proof:        circuitProof,
 		VerifyingKey: circuitVk,
+		P:            x,
+		Q:            y,
+		R:            z,
 	}
 }

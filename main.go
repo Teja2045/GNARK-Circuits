@@ -1,6 +1,8 @@
 package main
 
-import "github.com/Teja2045/GNARK-Circuits/recursion"
+import (
+	"github.com/Teja2045/GNARK-Circuits/ipl"
+)
 
 func main() {
 	// cubic.Verify()
@@ -11,5 +13,7 @@ func main() {
 
 	// signature.ProveAndVerify()
 
-	recursion.ProveAndVerify()
+	// recursion.ProveAndVerify()
+
+	ipl.ProveAndVerify()
 }

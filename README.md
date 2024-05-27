@@ -27,7 +27,7 @@
   
       Note: Signature circuit is refactored to have separate prover and verifier. It could be used as a complete example flow.
 
-### Recursive proof
+### Recursive proof (Not completed)
 ![recursive proof design](https://github.com/Teja2045/GNARK-Circuits/assets/106052623/30482e17-57ff-41ac-bc54-a1cdc22f956d)
 
 

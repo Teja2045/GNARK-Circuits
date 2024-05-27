@@ -30,3 +30,9 @@
 ### Recursive proof
 ![recursive proof design](https://github.com/Teja2045/GNARK-Circuits/assets/106052623/30482e17-57ff-41ac-bc54-a1cdc22f956d)
 
+
+### HTTP Circuit
+-  A circuit which requests an endpoint for some data and uses that data for some operations
+-  For this to work as expected, the api needs to DETERMINISTIC (an endpoint should return same reponse no matter how many times it's called) ! 
+-  It's like a pure function
+-  If the endpoint returns different response, it will lead inconsistency error when compiling the circuit

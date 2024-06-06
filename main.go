@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/Teja2045/GNARK-Circuits/ipl"
+	"github.com/Teja2045/GNARK-Circuits/comparisions"
 )
 
 func main() {
@@ -15,5 +15,7 @@ func main() {
 
 	// recursion.ProveAndVerify()
 
-	ipl.ProveAndVerify()
+	// ipl.ProveAndVerify()
+
+	comparisions.ProveAndVerify()
 }

@@ -32,6 +32,14 @@
 
       Note: Signature circuit is refactored to have separate prover and verifier. It could be used as a complete example flow.
 
+### Sha2 vs crypto/sha256
+
+- Tried to check hashing compatibility of gnark sha2 implementation with crypto/256. Failed!
+
+### Comarisions
+
+- To check if we can directly compare circuit variables without using assert. Failed!
+
 ### Conditional Circuit
 
 - A Zk circuit doesn't support if statement, but we can use api.Select{} for somewhat similar effect

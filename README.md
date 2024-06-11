@@ -4,12 +4,11 @@
 
 ## Circuits
 
-### HTTP Circuit
-
-- A circuit which requests an endpoint for some data and uses that data for some operations
-- For this to work as expected, the api needs to DETERMINISTIC (an endpoint should return same reponse no matter how many times it's called) !
-- It's like a pure function
-- If the endpoint returns different response, it will lead inconsistency error when compiling the circuit
+### Secp256k1 Ecdsa Signature
+- cosmos-sdk supports secp256k1 curve ecdsa signature scheme
+- gnark also has an implementation of the same but there is no way to generate gnark PrivateKey from
+sdk private key
+so use this fork instead, https://github.com/Teja2045/gnark-crypto
 
 ### Merkle Inclusion proof
 
@@ -31,6 +30,15 @@
 - data is private input and pubkey, signature are public inputs
 
       Note: Signature circuit is refactored to have separate prover and verifier. It could be used as a complete example flow.
+
+
+### HTTP Circuit
+
+- A circuit which requests an endpoint for some data and uses that data for some operations
+- For this to work as expected, the api needs to DETERMINISTIC (an endpoint should return same reponse no matter how many times it's called) !
+- It's like a pure function
+- If the endpoint returns different response, it will lead inconsistency error when compiling the circuit
+
 
 ### Sha2 vs crypto/sha256
 

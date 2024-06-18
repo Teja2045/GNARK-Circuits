@@ -51,7 +51,7 @@ func TestMerkleProof(t *testing.T) {
 	assingment := MerkleProofCircuit{
 		MerkleProof: utils.GetMerkleProofFromBytes(root, proof),
 		LeafIndex:   uint64(proofIndex),
-		LeafData:    proof[1],
+		LeafData:    proof[0],
 	}
 
 	var circuit MerkleProofCircuit

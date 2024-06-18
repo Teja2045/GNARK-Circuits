@@ -7,8 +7,9 @@ import (
 )
 
 type MerkleProofCircuit struct {
+	LeafData    frontend.Variable
 	MerkleProof merkle.MerkleProof `gnark:",public"`
-	Data        frontend.Variable  `gnark:",public"`
+	LeafIndex   frontend.Variable  `gnark:",public"`
 }
 
 func (circuit *MerkleProofCircuit) Define(api frontend.API) error {
@@ -18,6 +19,8 @@ func (circuit *MerkleProofCircuit) Define(api frontend.API) error {
 		return err
 	}
 
-	circuit.MerkleProof.VerifyProof(api, &hFunc, circuit.Data)
+	api.AssertIsEqual(circuit.LeafData, circuit.MerkleProof.Path[0])
+
+	circuit.MerkleProof.VerifyProof(api, &hFunc, circuit.LeafIndex)
 	return nil
 }

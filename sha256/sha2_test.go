@@ -17,13 +17,13 @@ func TestSha256Circuit(t *testing.T) {
 		In: uints.NewU8Array(data2),
 	}
 
-	copy(assignment.Expected[:], uints.NewU8Array(digest[:]))
+	copy(assignment.Expected, uints.NewU8Array(digest[:]))
 
-	err := test.IsSolved(&Sha256Circuit{In: make([]uints.U8, len(data1))}, &assignment, ecc.BN254.ScalarField())
+	err := test.IsSolved(&Sha256Circuit{In: make([]uints.U8, len(data2))}, &assignment, ecc.BN254.ScalarField())
 	if err != nil {
 		t.Fatal(err)
 	}
 
 	assert := test.NewAssert(t)
-	assert.ProverSucceeded(&Sha256Circuit{In: make([]uints.U8, len(data1))}, &assignment)
+	assert.ProverFailed(&Sha256Circuit{In: make([]uints.U8, len(data1))}, &assignment)
 }

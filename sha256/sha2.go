@@ -1,7 +1,3 @@
-// Package sha2 implements SHA2 hash computation.
-//
-// This package extends the SHA2 permutation function [sha2] into a full SHA2
-// hash.
 package sha256
 
 import (
@@ -16,6 +12,9 @@ import (
 	"github.com/consensys/gnark/std/math/uints"
 	"github.com/consensys/gnark/std/permutation/sha2"
 )
+
+// var _ hash.BinaryFixedLengthHasher = (*digest)(nil)
+// var _ hash.FieldHasher = (*digest)(nil)
 
 var _seed = uints.NewU32Array([]uint32{
 	0x6A09E667, 0xBB67AE85, 0x3C6EF372, 0xA54FF53A, 0x510E527F, 0x9B05688C, 0x1F83D9AB, 0x5BE0CD19,

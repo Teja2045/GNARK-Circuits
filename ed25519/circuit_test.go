@@ -9,7 +9,6 @@ import (
 	"github.com/consensys/gnark/frontend"
 	"github.com/consensys/gnark/std/signature/eddsa"
 	"github.com/consensys/gnark/test"
-	"github.com/cosmos/cosmos-sdk/crypto/keys/ed25519"
 )
 
 // not completed since 25519 curve is not implemented
@@ -23,8 +22,8 @@ func TestSignatureCircuit(t *testing.T) {
 
 	data := []byte{1, 2, 3}
 
-	secret := []byte("huge huge secret")
-	sdkPrivkey := ed25519.GenPrivKeyFromSecret(secret)
+	//secret := []byte("huge huge secret")
+	//sdkPrivkey := ed25519.GenPrivKeyFromSecret(secret)
 
 	privKey, pubKey := utils.GenerateKeys(0)
 	signature := utils.Sign(data, privKey, hFunc)

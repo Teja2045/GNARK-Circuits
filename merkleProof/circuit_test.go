@@ -63,3 +63,7 @@ func TestMerkleProof(t *testing.T) {
 	// root []byte, proofSet [][]byte, numLeaves uint64, err error
 
 }
+
+func TestMerkleProofWithSha256(t *testing.T) {
+
+}

@@ -19,7 +19,11 @@ func TestSignatureCircuit(t *testing.T) {
 	mimc := hash.MIMC_BN254
 	hFunc := mimc.New()
 
-	data := []byte{1, 2, 3}
+	// bigger than this is problem
+	data := make([]byte, 32)
+	for i := byte(0); i < 32; i++ {
+		data[i] = i
+	}
 
 	privKey, pubKey := utils.GenerateKeys(0)
 	signature := utils.Sign(data, privKey, hFunc)

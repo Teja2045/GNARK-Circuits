@@ -2,6 +2,8 @@ module github.com/Teja2045/GNARK-Circuits
 
 go 1.21.6
 
+replace github.com/consensys/gnark-crypto => github.com/Teja2045/gnark-crypto v0.12.1-master
+
 require (
 	github.com/consensys/gnark v0.10.0
 	github.com/consensys/gnark-crypto v0.12.2-0.20240215234832-d72fcb379d3e
@@ -85,5 +87,3 @@ require (
 	rsc.io/tmplfunc v0.0.3 // indirect
 	sigs.k8s.io/yaml v1.4.0 // indirect
 )
-
-replace github.com/consensys/gnark-crypto => github.com/Teja2045/gnark-crypto v0.12.1-master

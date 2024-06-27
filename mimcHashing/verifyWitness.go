@@ -26,7 +26,7 @@ func (assignment *MimcCircuit) VerifyWitness(field *big.Int, publicWitness witne
 func VerifyWitness2(field *big.Int, publicWitness witness.Witness, publicHash any) bool {
 
 	assignment := MimcCircuit{
-		PreImage: 123,
+		PreImage: 123, // random
 		Hash:     publicHash,
 	}
 

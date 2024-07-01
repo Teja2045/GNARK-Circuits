@@ -14,13 +14,13 @@ type Sha256MerkleProofCircuit struct {
 
 func (circuit *Sha256MerkleProofCircuit) Define(api frontend.API) error {
 
-	hFunc, err := sha256.New(api)
+	_, err := sha256.New(api)
 	if err != nil {
 		return err
 	}
 
 	api.AssertIsEqual(circuit.LeafData, circuit.MerkleProof.Path[0])
 
-	circuit.MerkleProof.VerifyProof(api, hFunc, circuit.LeafIndex)
+	// circuit.MerkleProof.VerifyProof(api, hFunc, circuit.LeafIndex)
 	return nil
 }

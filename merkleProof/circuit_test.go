@@ -49,13 +49,19 @@ func TestMerkleProof(t *testing.T) {
 	verified = merkletree.VerifyProof(hFunc, root, proof, 0, numLeaves)
 	assert.Equal(verified, true)
 
-	assingment := Sha256MerkleProofCircuit{
+	// hash for data: 1
+	data := []byte{1}
+	hFunc.Reset()
+	hFunc.Write(data)
+	dataHash := hFunc.Sum(nil)
+
+	assingment := MerkleProofCircuit{
 		MerkleProof: utils.GetMerkleProofFromBytes(root, proof),
 		LeafIndex:   uint64(proofIndex),
-		LeafData:    proof[0],
+		LeafData:    dataHash,
 	}
 
-	var circuit Sha256MerkleProofCircuit
+	var circuit MerkleProofCircuit
 	circuit.MerkleProof.Path = make([]frontend.Variable, len(proof))
 
 	assert.CheckCircuit(&circuit, test.WithValidAssignment(&assingment), test.WithCurves(ecc.BN254))
